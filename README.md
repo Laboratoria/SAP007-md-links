@@ -11,6 +11,7 @@
 * [7. Hacker edition](#7-hacker-edition)
 * [8. Guias, dicas e leituras complementares](#8-guias-dicas-e-leituras-complementares)
 * [9. Checklist](#9-checklist)
+* [10. Dividindo o problema - babies steps](#10-dividindo-o-problema)
 
 ***
 
@@ -35,20 +36,20 @@ estatísticas.
 
 ## 2. Resumo do projeto
 
+Neste projeto, será criado uma ferramenta de linha de comando (CLI) assim como
+a sua própria biblioteca (library) em Javascript.
+
+Desta vez, vamos ficar um pouco longe do navegador para construir um programa
+executado com Node.js. Iremos aprender sobre processos
+(`process.env`, `process.argv`, ...),como interagir com sistemas de arquivos,
+como fazer consultas de rede, etc.
+
 [Node.js](https://nodejs.org/pt-br/) é um ambiente de execução para JavaScript
 construído com o [motor de JavaScript V8 do
 Chrome](https://developers.google.com/v8/). Ele vai nos permitir executar o
 JavaScript no nosso sistema operacional, seja no seu computador ou em um
 servidor, o que nos abre portas para poder interagir com sistemas, arquivos,
 redes e etc.
-
-Neste projeto vamos ficar um pouco longe do navegador para construir um programa
-que seja executado com Node.js, onde iremos aprender sobre como interagir com
-sistemas de arquivos e com o ambiente onde é executado o Node (_processo_, _env_,
-_stdin/stdout/stderr_).
-
-Neste projeto você criará uma ferramenta de linha de comando (CLI) assim como a
-sua própria biblioteca (library) em JavaScript.
 
 Desenvolver sua própria biblioteca é uma experiência fundamental para qualquer
 desenvolvedora, pois te obriga a pensar na interface (API) dos seus _módulos_ e
@@ -57,185 +58,13 @@ peculiaridades da linguagem, convenções e boas práticas.
 
 ## 3. Objetivos de aprendizagem
 
-Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projeto. Pense nisso para decidir sua estratégia de trabalho.
-
-### JavaScript
-
-- [ ] **Diferenciar entre tipos de dados primitivos e não primitivos**
-
-- [ ] **Manipular arrays (filter, map, sort, reduce)**
-
-  <details><summary>Links</summary><p>
-
-  * [Arrays](https://curriculum.laboratoria.la/pt/topics/javascript/04-arrays)
-  * [Array - MDN](https://developer.mozilla.org//pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/)
-  * [Array.prototype.sort() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-  * [Array.prototype.forEach() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-  * [Array.prototype.map() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-  * [Array.prototype.filter() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-  * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-</p></details>
-
-- [ ] **Manipular objects (key | value)**
-
-  <details><summary>Links</summary><p>
-
-  * [Objetos em JavaScript](https://curriculum.laboratoria.la/pt/topics/javascript/05-objects/01-objects)
-</p></details>
-
-- [ ] **Uso de condicionais (if-else, switch, operador ternário)**
-
-  <details><summary>Links</summary><p>
-
-  * [Estruturas condicionais e repetitivas](https://curriculum.laboratoria.la/pt/topics/javascript/02-flow-control/01-conditionals-and-loops)
-  * [Tomando decisões no seu código — condicionais - MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Building_blocks/conditionals)
-</p></details>
-
-- [ ] **Uso de funções (parâmetros, argumentos, valor de retorno)**
-
-  <details><summary>Links</summary><p>
-
-  * [Funções (controle de fluxo)](https://curriculum.laboratoria.la/pt/topics/javascript/02-flow-control/03-functions)
-  * [Funções clássicas](https://curriculum.laboratoria.la/pt/topics/javascript/03-functions/01-classic)
-  * [Arrow Functions](https://curriculum.laboratoria.la/pt/topics/javascript/03-functions/02-arrow)
-  * [Funções — blocos reutilizáveis de código - MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Building_blocks/Functions)
-</p></details>
-
-- [ ] **Recursão**
-
-  <details><summary>Links</summary><p>
-
-  * [Píldora de recursão - YouTube Laboratoria Developers (espanhol)](https://www.youtube.com/watch?v=lPPgY3HLlhQ)
-  * [Recursão o Recursividade - Laboratoria Developers em Medium (espanhol)](https://medium.com/laboratoria-developers/recursi%C3%B3n-o-recursividad-ec8f1a359727)
-</p></details>
-
-- [ ] **Módulos de CommonJS**
-
-  <details><summary>Links</summary><p>
-
-  * [Modules: CommonJS modules - Node.js Docs](https://nodejs.org/docs/latest/api/modules.html)
-</p></details>
-
-- [ ] **Diferença entre expression e statements**
-
-- [ ] **Uso de callbacks**
-
-  <details><summary>Links</summary><p>
-
-  * [Função Callback - MDN](https://developer.mozilla.org/pt-BR/docs/Glossario/Callback_function)
-</p></details>
-
-- [ ] **Promessas (Promises)**
-
-  <details><summary>Links</summary><p>
-
-  * [Promise - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-  * [How to Write a JavaScript Promise - freecodecamp (em inglês)](https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/)
-</p></details>
-
-- [ ] **Testes unitários**
-
-  <details><summary>Links</summary><p>
-
-  * [Introdução ao Jest - Documentação oficial](https://jestjs.io/docs/pt-BR/getting-started)
-</p></details>
-
-- [ ] **Testes assíncronos**
-
-  <details><summary>Links</summary><p>
-
-  * [Testando Código Assíncrono - Documentação oficial](https://jestjs.io/docs/pt-BR/asynchronous)
-</p></details>
-
-- [ ] **Mocking**
-
-  <details><summary>Links</summary><p>
-
-  * [Simulações Manuais - Documentação oficial](https://jestjs.io/docs/pt-BR/manual-mocks)
-</p></details>
-
-- [ ] **Teste de compatibilidade em vários ambientes de tempo de execução**
-
-- [ ] **Uso de linter (ESLINT)**
-
-- [ ] **Uso de identificadores descritivos (Nomenclatura | Semântica)**
-
-### Node.js
-
-- [ ] **Instalar e usar módulos (npm)**
-
-  <details><summary>Links</summary><p>
-
-  * [Sitio oficial de npm (em inglês)](https://www.npmjs.com/)
-</p></details>
-
-- [ ] **Configuração do package.json**
-
-  <details><summary>Links</summary><p>
-
-  * [package.json - Documentação oficial (em inglês)](https://docs.npmjs.com/files/package.json)
-</p></details>
-
-- [ ] **Configuração do npm-scripts**
-
-  <details><summary>Links</summary><p>
-
-  * [scripts - Documentação oficial (em inglês)](https://docs.npmjs.com/misc/scripts)
-</p></details>
-
-- [ ] **process (env, argv, stdin-stdout-stderr, exit-code)**
-
-  <details><summary>Links</summary><p>
-
-  * [Process - Documentação oficial (em inglês)](https://nodejs.org/api/process.html)
-</p></details>
-
-- [ ] **Uso de sistema de arquivos (fs, path)**
-
-  <details><summary>Links</summary><p>
-
-  * [File system - Documentação oficial (em inglês)](https://nodejs.org/api/fs.html)
-  * [Path - Documentação oficial (em inglês)](https://nodejs.org/api/path.html)
-</p></details>
-
-### Controle de Versões (Git e GitHub)
-
-- [ ] **Git: Instalação e configuração**
-
-- [ ] **Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)**
-
-- [ ] **Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)**
-
-- [ ] **GitHub: Criação de contas e repositórios, configuração de chave SSH**
-
-- [ ] **GitHub: Implantação com GitHub Pages**
-
-  <details><summary>Links</summary><p>
-
-  * [Site oficial do GitHub Pages](https://pages.github.com/)
-</p></details>
-
-- [ ] **GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)**
-
-- [ ] **GitHub: Organização pelo Github (projects | issues | labels | milestones | releases)**
-
-### HTTP
-
-- [ ] **Solicitações HTTP ou requisições (request) e respostas (response).**
-
-  <details><summary>Links</summary><p>
-
-  * [Uma visão geral do HTTP - MDN](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview)
-  * [Mensagens HTTP - MDN](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Messages)
-</p></details>
-
-- [ ] **Códigos de status de HTTP**
-
-  <details><summary>Links</summary><p>
-
-  * [Códigos de status de respostas HTTP - MDN](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status)
-  * [The Complete Guide to Status Codes for Meaningful ReST APIs - dev.to](https://dev.to/khaosdoctor/the-complete-guide-to-status-codes-for-meaningful-rest-apis-1-5c5)
-</p></details>
+> ℹ️ Esta seção será automaticamente gerada no idioma pertinente, a partir dos
+> objetivos de aprendizagem declarados em [`project.yml`](./project.yml), ao
+> criar o repositório do projeto para uma coorte em particular usando
+> [`./scripts/create-cohort-project.js`](../../scripts#create-cohort-project-coaches).
+>
+> Aqui você pode ver uma [lista de todos os objetivos de aprendizagem](../../learning-objectives/data.yml)
+> cobertos em nosso currículo.
 
 ## 4. Considerações gerais
 
@@ -269,7 +98,8 @@ detalhado no `README.md` do seu repositório e em uma série de _issues_ e
 _milestones_ para priorizar e organizar o trabalho, e para fazer um
 acompanhamento do seu progresso.
 
-Dentro de cada _milestone_ deve-se criar e atribuir as _issues_.
+Dentro de cada _milestone_ serão criados e atribuidos as _issues_
+que considerar necessários.
 
 ### Arquivos do projeto
 
@@ -281,16 +111,19 @@ Dentro de cada _milestone_ deve-se criar e atribuir as _issues_.
   dependências e scripts (pretest, test e etc).
 * `.editorconfig` com a configuração para o editor de texto. Este arquivo não
   deve ser alterado.
-* `.eslintrc` com a configuração para o linter. Este arquivo não deve ser
-  alterado.
+* `.eslintrc` com a configuração para o linter. Este arquivo contém uma
+configuração básica para ESLint, se quiser colocar regras adicionais
+como Airbnb, você deverá modificar este arquivo.
 * `.gitignore` para ignorar o `node_modules` e outras pastas que não devem
   ser incluídas no controle de versão (`git`).
 * `test/md-links.spec.js` deve conter os testes unitários para a função
   `mdLinks()`. A sua implementação deve rodar estes testes.
 
-### JavaScript API
+## Este proyecto consta de DOS partes
 
-O módulo deve poder ser importado em outros scripts Node.js e deve oferecer a
+### 1) JavaScript API
+
+O módulo deve poder ser **importado** em outros scripts Node.js e deve oferecer a
 seguinte interface:
 
 #### `mdLinks(path, options)`
@@ -303,16 +136,29 @@ seguinte interface:
 * `options`: Um objeto com a seguinte propriedade:
   - `validate`: Um booleano que determina se deseja validar os links
     encontrados.
+  - `stats`: Booleano que determina se deseja obter um output
+    com informações estatísticas gerais.
 
 ##### Valor de retorno
 
-A função deve retornar uma promessa (`Promise`) que resolve um array (`Array`) e
+A função deve **retornar uma promessa** (`Promise`) que
+**resolve um array** (`Array`) e
 objetos(`Object`), onde cada objeto representa um link, contendo as seguintes
 propriedades:
+
+Com `validate:false` :
 
 * `href`: URL encontrada.
 * `text`: Texto que irá aparecer dentro de um link (`<a>`).
 * `file`: Rota do arquivo onde foi encontrado o link.
+
+Com `validate:true` :
+
+* `href`: URL encontrada.
+* `text`: Texto que aparecía dentro del link (`<a>`).
+* `file`: Ruta del archivo donde se encontró el link.
+* `status`: Código de resposta HTTP.
+* `ok`: Mensagem `fail` em caso de falha ou `ok` em caso de sucesso.
 
 #### Exemplo
 
@@ -321,27 +167,27 @@ const mdLinks = require("md-links");
 
 mdLinks("./some/example.md")
   .then(links => {
-    // => [{ href, text, file }]
+    // => [{ href, text, file }, ...]
   })
   .catch(console.error);
 
 mdLinks("./some/example.md", { validate: true })
   .then(links => {
-    // => [{ href, text, file, status, ok }]
+    // => [{ href, text, file, status, ok }, ...]
   })
   .catch(console.error);
 
 mdLinks("./some/dir")
   .then(links => {
-    // => [{ href, text, file }]
+    // => [{ href, text, file }, ...]
   })
   .catch(console.error);
 ```
 
-### CLI (Command Line Interface - Interface de Linha de Comando)
+### 2) CLI (Command Line Interface - Interface de Linha de Comando)
 
 O executável da nossa aplicação deve poder ser executado da seguinte maneira,
-através do terminal:
+através do **terminal**:
 
 `md-links <path-to-file> [options]`
 
@@ -404,8 +250,8 @@ Broken: 1
 ## 6. Entregáveis
 
 O módulo deve ser instalável via `npm install <github-user>/md-links`. Este
-módulo deve incluir um executável que pode ser chamado tanto por linha de
-comando quanto importado com `require` para usá-lo no seu código.
+módulo deve incluir **um executável** que pode ser chamado tanto por linha de
+comando, como também possa ser importado com `require` para usá-lo no seu código.
 
 ## 7. Hacker edition
 
@@ -464,8 +310,8 @@ criado das seguintes maneiras (todas são válidas):
 * Usando um _custom renderer_ de [marked](https://github.com/markedjs/marked)
   (`new marked.Renderer()`).
 
-Não hesite em consultar as suas companheiras, mentores e/ou o [fórum da
-comunidade](http://community.laboratoria.la/c/js) se tiver dúvidas a respeito
+Não hesite em consultar as suas companheiras e mentores
+se tiver dúvidas a respeito
 destas decisões. Não existe uma única maneira certa :wink:
 
 ### Tutoriais / NodeSchool workshoppers
@@ -534,3 +380,118 @@ destas decisões. Não existe uma única maneira certa :wink:
 * [ ] Os testes unitários devem cobrir no mínimo 70% dos statements, functions,
   lines e branches.
 * [ ] Rodar os testes e linter (`npm test`).
+
+## 10. Dividindo o problema
+
+Uma das habilidades que esperamos que vocˆw possa desenvolver durante o bootcamp
+é o de definir "mini-projetos/babies steps" que a aproxime passo-a-passo
+da solução do "grande projeto". É o mesmo que começar fazendo
+as bordas de um quebra-cabeça sem necessariamente saber
+como se encaixará no final.
+
+Estas são algumas sugestões:
+
+### Comece com um fluxograma
+
+Este projeto é diferente dos que você tem trabalhado até agora.
+Como não há uma interface web, tudo será desenvolvido em seu editor e
+consola/terminal.
+
+Por isso, para visualizar melhor o que você terá que fazer
+para planejar suas tarefas e objetivos, é aconselhável fazer um
+`fluxograma`.
+
+Se você nunca fez um fluxograma, confira este [recurso](https://www.youtube.com/watch?v=Lub5qOmY4JQ).
+
+Uma alternativa ao fluxograma pode ser `pseudocódigo`.
+
+### Planejamento
+
+Neste projeto recomendamos o uso do **Github Projects**, ferramenta
+de planejamento e organização do GitHub
+
+Por meio de **issues** e **milestones** pode-se organizar e planificar
+tarefas e objetivos concretos.
+
+Levando em consideração os **entregáveis** do projeto,
+[9. Checklist](#9-checklist) e os **passos** que foram definidos em seu
+`fluxograma`, crie o seu  planejamento em GitHub Projects.
+
+### Antes do código
+
+Desta vez você estará trabalhando em **NodeJS**, certifique-se de
+saber para que serve e suas considerações.
+
+Em particular, é preciso decidir antecipadamente se usará
+`ES Modules`, ou seja usar **import/export**, ou se utilizará
+`CommonJS Modules`, ou seja **require/module.exports**.
+
+Certifique-se de ter esta decisão clara desde o início para
+que você não encontre problemas mais tarde.
+
+### Ler um arquivo
+
+Como primeiro desafio, você pode tentar ler um único arquivo com
+um caminho fixo e imprimir seu conteúdo no console com um `console.log`.
+
+A biblioteca nativa `FS` (FileSystem) será útil para você.
+
+### Descobrir a extensão de um arquivo
+
+Já sabendo ler um arquivo, aventure-se em saber qual
+é a sua extensão.
+
+Lembre-se, as extensões são aquelas letras no final do
+nome de um arquivo, por exemplo: .js, .txt, .doc etc.
+
+A biblioteca `FS` também pode ser útil aqui.
+
+### Obter o conteúdo de um diretório
+
+Este projeto consiste em buscar arquivos, mas para isso,
+você deve primeiro ser capaz de vê-los.
+
+Tenta imprimir para console a lista de arquivos em uma pasta.
+
+A biblioteca `FS` também será útil aqui.
+
+### Definir rotas
+
+Para acessar pastas e arquivos, será necessário
+indicar onde eles estão localizados em seu computador, sendo
+chamadas de **rotas**.
+
+Use a biblioteca nativa `path` para unir dois segmentos de caminho,
+Por exemplo, se quisermos juntar:
+
+1) /home/Laboratório/
+2) ./teste
+
+O resultado seria: /home/Lab/test
+
+### Recursão
+
+Este projeto pode ser resolvido com
+**recursão**.
+
+Por que?
+
+Porque não sabemos quantas pastas e arquivos
+teremos que passar antes de terminar.
+
+Se você receber um caminho de pasta, não saberá com antecedência se
+há mais pastas dentro ou mais arquivos.
+
+Portanto, certifique-se de entender o que o
+recursão e veja alguns exemplos.
+
+### Crie uma promessa
+
+O valor de retorno da nossa biblioteca é uma `Promise`,
+não um `Array`.
+
+Tente ler sobre promessas e criando uma por
+conta própria usando **new Promise()**
+
+É importante que você saiba o que é um **callback** porque serão usadas
+nas promessas.
